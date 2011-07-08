@@ -1,6 +1,8 @@
 package code
 package model
 
+import scala.util.Random
+
 import _root_.net.liftweb.record._
 import _root_.net.liftweb.record.field._
 import _root_.net.liftweb.mongodb._
@@ -30,6 +32,13 @@ object User extends User with MongoMetaRecord[User] with MetaMegaProtoUser[User]
  */
 class User extends MongoRecord[User] with MegaProtoUser[User] {
   def meta = User // what's the "meta" server
+  
+  /* ProtoUser requires id to be a LongField */
+  override lazy val id = new MyMappedLongClass(this) {
+    override def defaultValue = Random.nextLong
+    override def name = "_id"
+  }
+  
   protected def userFromStringId(id: String): Box[User] = meta.find(id)
   
   protected def findUserByUniqueId(id: String): Box[User] =  {

@@ -1,0 +1,12 @@
+MongoDB not working with Lift 2.4-M2 and sbt 0.10.0
+
+Also tested with 2.4-SNAPSHOT using this in build.sbt
+
+resolvers += {
+  val snapshots = new java.net.URL("http://scala-tools.org/repo-snapshots")
+  Resolver.url("snapshots", snapshots)
+}
+
+to get the latest snapshot, can't seem to get it to build at allwith 2.8.1 and 2.4 Snapshot as per
+
+http://groups.google.com/group/liftweb/browse_thread/thread/709629561ac66bd7/443a5c2e50c98506?lnk=gst&q=megaprotouser+mongo#

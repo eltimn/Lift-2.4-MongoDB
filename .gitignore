@@ -1,0 +1,7 @@
+project/plugins/project/target
+project/plugins/target
+project/boot
+project/target
+target
+
+src/main/webapp/sass/.sass-cache

@@ -1,5 +1,9 @@
 MongoDB not working with Lift 2.4-M2 and sbt 0.10.0
 
+Specifically when going to edit user in the default application and error is thrown
+for trying to open an empty box.  Logging in will also fail, but looking at
+the mongo DB database, users are saved
+
 Also tested with 2.4-SNAPSHOT using this in build.sbt
 
 resolvers += {
@@ -7,6 +11,6 @@ resolvers += {
   Resolver.url("snapshots", snapshots)
 }
 
-to get the latest snapshot, can't seem to get it to build at allwith 2.8.1 and 2.4 Snapshot as per
+to get the latest snapshot, can't seem to get it to build at allwith 2.8.1 and 2.4 Snapshot as per, which may solve the problem
 
 http://groups.google.com/group/liftweb/browse_thread/thread/709629561ac66bd7/443a5c2e50c98506?lnk=gst&q=megaprotouser+mongo#
